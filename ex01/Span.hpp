@@ -6,7 +6,7 @@
 /*   By: spitul <spitul@student.42berlin.de>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/24 12:09:57 by spitul            #+#    #+#             */
-/*   Updated: 2025/08/25 10:34:06 by spitul           ###   ########.fr       */
+/*   Updated: 2025/08/25 17:47:16 by spitul           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ class Span
 {
 	private:
 		std::vector<int>	_v;
-		int	_N;
+		unsigned int	_N;
 		
 	public:
 		Span(unsigned int N);

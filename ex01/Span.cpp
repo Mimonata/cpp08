@@ -6,7 +6,7 @@
 /*   By: spitul <spitul@student.42berlin.de>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/24 12:11:23 by spitul            #+#    #+#             */
-/*   Updated: 2025/08/25 11:30:20 by spitul           ###   ########.fr       */
+/*   Updated: 2025/08/25 18:53:50 by spitul           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ int		Span::shortestSpan()
 	{		
 		std::vector<int>	a = _v;
 		std::sort(a.begin(), a.end());
-		for (int i = 1; i < a.size(); i++)
+		for (size_t i = 1; i < a.size(); i++)
 		{
 			if (a[i] - a[i - 1] < min)
 				min = a[i] - a[i - 1];
@@ -69,9 +69,14 @@ int		Span::shortestSpan()
 
 int		Span::longestSpan()
 {
+	long	diff;
+	
 	if (_v.size() < 2)
 		throw std::length_error("Vector does not contain two elements");
 	std::vector<int>::iterator	minit = std::min_element(_v.begin(), _v.end());
 	std::vector<int>::iterator	maxit = std::max_element(_v.begin(), _v.end());
-	return *maxit - *minit;
+	diff = static_cast<long>(*maxit) - static_cast<long>(*minit);
+	if (diff > INT_MAX || diff < INT_MIN)
+		throw std::overflow_error("Longest span overflows int"); 
+	return diff;
 }
