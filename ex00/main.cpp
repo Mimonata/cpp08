@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: spitul <spitul@student.42berlin.de>        +#+  +:+       +#+        */
+/*   By: spitul <spitul@student.42berlin.de >       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/23 10:38:38 by spitul            #+#    #+#             */
-/*   Updated: 2025/08/25 09:52:03 by spitul           ###   ########.fr       */
+/*   Updated: 2025/08/29 17:44:43 by spitul           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,19 +25,15 @@ int	main()
 	v.push_back(8);
 	v.push_back(2);
 
-	std::cout << "--- Vector ---\n";
+	std::cout << YLW << "--- Vector ---\n" << RST;
 	try
 	{
 		it = easyfind(v, 3);
 		std::cout << "[" << std::distance(v.begin(), it) << "] = " << *it << std::endl;
 	}
-	catch (const std::runtime_error &e)
-	{
-		std::cout << "Error: " << e.what() << std::endl;
-	}
 	catch (const std::exception &e)
 	{
-		std::cout << "Error: " << e.what() << std::endl;
+		std::cerr << GRN << "Error: " << e.what() << RST << std::endl;
 	}
 
 	try
@@ -45,13 +41,9 @@ int	main()
 		it = easyfind(v, 22);
 		std::cout << "[" << std::distance(v.begin(), it) << "] = " << *it << std::endl;
 	}
-	catch (const std::runtime_error &e)
-	{
-		std::cout << "Error: " << e.what() << std::endl;
-	}
 	catch (const std::exception &e)
 	{
-		std::cout << "Error: " << e.what() << std::endl;
+		std::cerr << GRN << "Error: " << e.what() << RST << std::endl;
 	}
 	
 	std::list<int>::iterator	lit;
@@ -60,19 +52,15 @@ int	main()
 	l.push_back(9);
 	l.push_back(1);
 	
-	std::cout << "\n--- List ---\n";
+	std::cout << ORG << "--- List ---\n" << RST;
 	try
 	{
 		lit = easyfind(l, 3);
 		std::cout << "[" << std::distance(l.begin(), lit) << "] = " << *lit << std::endl;
 	}
-	catch (const std::runtime_error &e)
-	{
-		std::cout << "Error: " << e.what() << std::endl;
-	}
 	catch (const std::exception &e)
 	{
-		std::cout << "Error: " << e.what() << std::endl;
+		std::cerr << GRN << "Error: " << e.what() << RST << std::endl;
 	}
 
 	try
@@ -80,13 +68,9 @@ int	main()
 		lit = easyfind(l, 22);
 		std::cout << "[" << std::distance(l.begin(), lit) << "] = " << *lit << std::endl;
 	}
-	catch (const std::runtime_error &e)
-	{
-		std::cout << "Error: " << e.what() << std::endl;
-	}
 	catch (const std::exception &e)
 	{
-		std::cout << "Error: " << e.what() << std::endl;
+		std::cerr << GRN << "Error: " << e.what() << RST << std::endl;
 	}
 	
 	return 0;

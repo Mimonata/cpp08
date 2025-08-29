@@ -3,17 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   Span.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: spitul <spitul@student.42berlin.de>        +#+  +:+       +#+        */
+/*   By: spitul <spitul@student.42berlin.de >       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/24 12:11:23 by spitul            #+#    #+#             */
-/*   Updated: 2025/08/25 18:53:50 by spitul           ###   ########.fr       */
+/*   Updated: 2025/08/29 17:00:08 by spitul           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Span.hpp"
 #include <stdexcept>
 #include <algorithm>
-#include <climits>
 
 Span::Span(unsigned int N)	: _N(N)
 {

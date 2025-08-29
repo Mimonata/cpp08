@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   MutantStack.tpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: spitul <spitul@student.42berlin.de>        +#+  +:+       +#+        */
+/*   By: spitul <spitul@student.42berlin.de >       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 17:55:13 by spitul            #+#    #+#             */
-/*   Updated: 2025/08/28 19:17:29 by spitul           ###   ########.fr       */
+/*   Updated: 2025/08/29 16:16:59 by spitul           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ MutantStack<T>::MutantStack()
 }
 
 template<typename T>
-MutantStack<T>::MutantStack(const MutantStack &other)
+MutantStack<T>::MutantStack(const MutantStack &other)	: std::stack<T>(other)
 {
 	
 }
@@ -27,7 +27,9 @@ MutantStack<T>::MutantStack(const MutantStack &other)
 template<typename T>
 MutantStack<T>& MutantStack<T>::operator=(const MutantStack &other)
 {
-	
+	if (this != &other)
+		std::stack<T>::operator=(other);
+	return *this;
 }
 
 template<typename T>
